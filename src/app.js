@@ -3,7 +3,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const routes = require('./routes/index.js');
-const cors = require('cors');
+
 const { CORS_URL } = process.env  //deploy
 
 require('./db.js');
@@ -23,10 +23,7 @@ server.use((req, res, next) => {  //DEPLOY
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
   next();
 });
-server.use(cors({
-  origin: ["http://localhost:3000", 'https://go-further.up.railway.app'],
-  methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
-}));
+
 
 server.use('/', routes);
 
