@@ -20,12 +20,7 @@ const router = Router();
 
 //router.get('/countries', getAllCountries);
 
-router.get("/", async (req, res) => {
 
-
-  res.send("Backend API Countries deploy Hans");
-
-});
 
 router.get("/countries", async (req, res) => {
 
